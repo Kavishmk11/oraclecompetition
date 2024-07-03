@@ -190,6 +190,15 @@ jQuery(document).ready(function ($) {
   }
   let i = setInterval(countdown, 1000);
   countdown();
+
+
+
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && (event.key === 'u' || event.key === 's' || event.key === 'a' || event.key === 'c')) {
+      event.preventDefault();
+    }
+  });
 });
 
 
