@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
   let secBox = document.getElementById("sec-box");
   //Format: Date(year, month, day, hour, minute)
   //Year is counter from 0 to 11
-  let endDate = new Date(2024, 6, 11, 0, 0);
+  let endDate = new Date(2024, 6, 11, 12, 0);
 
   //Output value in milliseconds
   let endTime = endDate.getTime();
