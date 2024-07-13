@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+    <meta name="description" content="" />
+
+    <link rel="icon" type="image/x-icon" href="img/logo1.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .drag-drop-area {
+            border: 2px dashed #d3d3d3;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            height: 100%;
+            /* Ensure drag drop area fills the container height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .drag-drop-area.dragover {
+            background-color: #f0f0f0;
+        }
+
+        .drag-drop-area p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Equal height for both columns */
+        .equal-height {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .equal-height .card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="index.html" class="app-brand-link">
+                        <a href="index.html" class="app-brand-link gap-2">
+                            <img src="img/logo1.png" style="height: 100px; width: 100px;">
+                        </a>
+                    </a>
+                </div>
+                <br>
+                <div class="menu-inner-shadow"></div>
+
+                <ul class="menu-inner py-1">
+                    <li class="menu-item active">
+                        <a href="index.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Dashboard</div>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="layout-page">
+                <div class="content-wrapper">
+                    <div class="container-lg flex-grow-1 container-p-y">
+                        <!-- Image Container -->
+                        <div class="row mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="img/Group 1.png" alt="Placeholder Image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Image Container -->
+                        <div class="row">
+                            <div class="col-lg-6 mb-4 order-0">
+                                <div class="card equal-height">
+                                    <div class="d-flex align-items-end row">
+                                        <div class="col-sm-7">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary">Congratulations Team <span id="teamName"></span></h5>
+                                                <h5 class="card-title text-primary">On Securing a Spot in the Final 10</h5>
+                                                <p class="mb-4">
+                                                    You have to submit <span class="fw-bold">all the files of your final project</span> at the
+                                                    end of the competition on our dashboard
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5 text-center text-sm-left">
+                                            <div class="card-body pb-0 px-0 px-md-4">
+                                                <img src="img/38ee6d7cefe1009aaaf859717d969415.jpg" height="140"
+                                                    alt="View Badge User"
+                                                    data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                                                    data-app-light-img="illustrations/man-with-laptop-light.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-lg-6 mb-4 order-0">
+                                <div class="card equal-height">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Drag and Drop Files</h5>
+                                        <div class="drag-drop-area" id="drag-drop-area">
+                                            <p>Drag and drop your files here</p>
+                                            <input type="file" id="fileInput" style="display: none;" multiple>
+                                        </div>
+                                        <button class="btn btn-outline-primary mt-3" id="browseFiles">Browse
+                                            Files</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Uploaded Files</h5>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">File Name</th>
+                                                    <th scope="col">Size</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="fileTableBody">
+                                                <!-- Files will be appended here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+
+
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/js/dashboards-analytics.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        const dragDropArea = document.getElementById('drag-drop-area');
+        const fileInput = document.getElementById('fileInput');
+        const browseFilesButton = document.getElementById('browseFiles');
+        const fileTableBody = document.getElementById('fileTableBody');
+
+        browseFilesButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        dragDropArea.addEventListener('dragover', function (event) {
+            event.preventDefault();
+            dragDropArea.classList.add('dragover');
+        });
+
+        dragDropArea.addEventListener('dragleave', function () {
+            dragDropArea.classList.remove('dragover');
+        });
+
+        dragDropArea.addEventListener('drop', function (event) {
+            event.preventDefault();
+            dragDropArea.classList.remove('dragover');
+            const files = event.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        fileInput.addEventListener('change', function (event) {
+            const files = event.target.files;
+            handleFiles(files);
+        });
+
+        function handleFiles(files) {
+            for (let file of files) {
+                console.log('File dropped:', file.name);
+                addFileToTable(file);
+            }
+        }
+
+        function addFileToTable(file) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+          <td>${file.name}</td>
+          <td>${(file.size / 1024).toFixed(2)} KB</td>
+          <td>
+            <button class="btn btn-danger btn-sm delete-button">Delete</button>
+          </td>
+        `;
+            fileTableBody.appendChild(row);
+
+            row.querySelector('.delete-button').addEventListener('click', () => {
+                fileTableBody.removeChild(row);
+            });
+        }
+    </script>
+</body>
+
+</html>
