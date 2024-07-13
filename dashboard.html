@@ -116,10 +116,13 @@
                                     <div class="d-flex align-items-end row">
                                         <div class="col-sm-7">
                                             <div class="card-body">
-                                                <h5 class="card-title text-primary">Congratulations Team <span id="teamName"></span></h5>
-                                                <h5 class="card-title text-primary">On Securing a Spot in the Final 10</h5>
+                                                <h5 class="card-title text-primary">Congratulations Team <span
+                                                        id="teamName"></span></h5>
+                                                <h5 class="card-title text-primary">On Securing a Spot in the Final 10
+                                                </h5>
                                                 <p class="mb-4">
-                                                    You have to submit <span class="fw-bold">all the files of your final project</span> at the
+                                                    You have to submit <span class="fw-bold">all the files of your final
+                                                        project</span> at the
                                                     end of the competition on our dashboard
                                                 </p>
                                             </div>
@@ -135,7 +138,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                             <div class="col-lg-6 mb-4 order-0">
                                 <div class="card equal-height">
@@ -162,11 +165,21 @@
                                                     <th scope="col">Size</th>
                                                     <th scope="col">Actions</th>
                                                 </tr>
+                                               
                                             </thead>
                                             <tbody id="fileTableBody">
                                                 <!-- Files will be appended here -->
                                             </tbody>
                                         </table>
+                                        <br>
+                                        <div class="text-end">
+                                            <button class="btn btn-primary" id="uploadFiles">Upload Files</button>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div class="col-12 mb-4">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -185,58 +198,7 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
-        const dragDropArea = document.getElementById('drag-drop-area');
-        const fileInput = document.getElementById('fileInput');
-        const browseFilesButton = document.getElementById('browseFiles');
-        const fileTableBody = document.getElementById('fileTableBody');
 
-        browseFilesButton.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        dragDropArea.addEventListener('dragover', function (event) {
-            event.preventDefault();
-            dragDropArea.classList.add('dragover');
-        });
-
-        dragDropArea.addEventListener('dragleave', function () {
-            dragDropArea.classList.remove('dragover');
-        });
-
-        dragDropArea.addEventListener('drop', function (event) {
-            event.preventDefault();
-            dragDropArea.classList.remove('dragover');
-            const files = event.dataTransfer.files;
-            handleFiles(files);
-        });
-
-        fileInput.addEventListener('change', function (event) {
-            const files = event.target.files;
-            handleFiles(files);
-        });
-
-        function handleFiles(files) {
-            for (let file of files) {
-                console.log('File dropped:', file.name);
-                addFileToTable(file);
-            }
-        }
-
-        function addFileToTable(file) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-          <td>${file.name}</td>
-          <td>${(file.size / 1024).toFixed(2)} KB</td>
-          <td>
-            <button class="btn btn-danger btn-sm delete-button">Delete</button>
-          </td>
-        `;
-            fileTableBody.appendChild(row);
-
-            row.querySelector('.delete-button').addEventListener('click', () => {
-                fileTableBody.removeChild(row);
-            });
-        }
     </script>
 </body>
 
