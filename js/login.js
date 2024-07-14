@@ -19,6 +19,8 @@ function signIn() {
                     document.getElementById('teamName').innerText = data.teamName;
                     // Password matched, redirect to another page (replace 'redirect-url' with your actual URL)
                     localStorage.setItem('isLoggedIn', true); // Example: Use a token or identifier in production
+                    localStorage.setItem('teamName', matchedTeam.teamname);
+                    localStorage.setItem('folderusername', matchedTeam.username);
                     window.location.href = 'dashboard.html';
                 } else {
                     document.getElementById('error-message').innerText = 'Incorrect password.';

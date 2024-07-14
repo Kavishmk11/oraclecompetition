@@ -1,7 +1,14 @@
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 if (!isLoggedIn) {
     window.location.href = 'login.html'; // Redirect to login page if not logged in
+} else {
+    const teamName = localStorage.getItem('teamName');
+    const folderUsername = localStorage.getItem('folderusername');
+    if (teamName) {
+        document.getElementById('teamName').innerText = teamName;
+    }
 }
+
 const logoutLink = document.getElementById('logoutLink');
 logoutLink.addEventListener('click', (event) => {
     event.preventDefault();
