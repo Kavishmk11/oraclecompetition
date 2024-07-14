@@ -128,19 +128,20 @@
 
                 <ul class="menu-inner py-1">
                     <li class="menu-item active">
-                        <a href="index.html" class="menu-link">
+                        <a href="index.html" class="menu-link" style="color: green;">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
                     </li>
-
+                
                     <li class="menu-item">
-                        <a href="#" id="logoutLink" class="menu-link">
+                        <a href="#" id="logoutLink" class="menu-link" style="color: green;">
                             <i class="menu-icon tf-icons bx bx-log-out-circle"></i>
                             <div data-i18n="Logout">Logout</div>
                         </a>
                     </li>
                 </ul>
+                
             </aside>
 
             <div class="layout-page">
@@ -150,7 +151,7 @@
                         <div class="row mb-4">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <img src="img/Group 1.png" alt="Placeholder Image" class="img-fluid">
+                                    <img src="img/image 3.png" alt="Placeholder Image" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -161,9 +162,9 @@
                                     <div class="d-flex align-items-end row">
                                         <div class="col-sm-7">
                                             <div class="card-body">
-                                                <h5 class="card-title text-primary">Congratulations Team <span
+                                                <h5 class="card-title" style="color: green;">Congratulations Team <span
                                                         id="teamName"></span></h5>
-                                                <h5 class="card-title text-primary">On Securing a Spot in the Final 10
+                                                <h5 class="card-title"  style="color: green;">On Securing a Spot in the Final 10
                                                 </h5>
                                                 <p class="mb-4">
                                                     You have to submit <span class="fw-bold">all the files of your final
@@ -188,12 +189,12 @@
                             <div class="col-lg-6 mb-4 order-0">
                                 <div class="card equal-height">
                                     <div class="card-body">
-                                        <h5 class="card-title">Drag and Drop Files</h5>
+                                        <h5 class="card-title" style="color: green;">Drag and Drop Files</h5>
                                         <div class="drag-drop-area" id="drag-drop-area">
-                                            <p>Drag and drop your files here</p>
+                                            <p style="color: green;">Drag and drop your files here</p>
                                             <input type="file" id="fileInput" style="display: none;" multiple>
                                         </div>
-                                        <button class="btn btn-outline-primary mt-3" id="browseFiles">Browse
+                                        <button class="btn btn-primary mt-3" id="browseFiles" style="background-color: green; border-color: green;">Browse
                                             Files</button>
                                     </div>
                                 </div>
@@ -202,7 +203,8 @@
                             <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Uploaded Files</h5>
+                                        <h5 class="card-title" style="color: green;">Uploaded Files</h5>
+                                        <h7 class="card-title" style="color: green;">Please make sure to add repository-github link in README file when submitting</h7>
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -218,13 +220,13 @@
                                         </table>
                                         <br>
                                         <div class="text-end">
-                                            <button class="btn btn-primary" id="uploadFiles">Upload Files</button>
+                                            <button class="btn btn-primary" id="uploadFiles" style="background-color: green; border-color: green;">Upload Files</button>
                                         </div>
 
                                         <div id="loaderOverlay">
                                             <div id="loader">
                                                 <div id="loaderProgress" class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                    <div class="progress-bar" role="progressbar" style="width: 0%; background-color: green;"
                                                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                                 <p id="loaderText">Uploading...</p>

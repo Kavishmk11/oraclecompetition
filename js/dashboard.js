@@ -48,18 +48,15 @@ uploadFilesButton.addEventListener('click', async () => {
                 progressBar.setAttribute('aria-valuenow', progress);
             },
             (error) => {
-                console.error('Error uploading file:', error);
                 // Handle specific errors
             },
             () => {
                 // Upload completed successfully
                 filesUploaded++;
-                console.log(`File ${fileName} uploaded successfully`);
 
                 // Check if all files are uploaded
                 if (filesUploaded === totalFiles) {
                     // Optionally, update UI or perform additional actions after all files are uploaded
-                    console.log('All files uploaded successfully');
                     // Hide loader overlay after upload completion
                     loaderOverlay.style.display = 'none';
                 }
@@ -85,7 +82,7 @@ const logoutLink = document.getElementById('logoutLink');
 logoutLink.addEventListener('click', (event) => {
     event.preventDefault();
     localStorage.removeItem('isLoggedIn'); // Clear session
-    window.location.href = 'index.html'; // Redirect to login page
+    window.location.href = 'login.html'; // Redirect to login page
 });
 
 browseFilesButton.addEventListener('click', () => {
@@ -119,7 +116,6 @@ fileInput.addEventListener('change', function (event) {
 // Handle dropped or selected files
 function handleFiles(files) {
     for (let file of files) {
-        console.log('File dropped or selected:', file.name);
         addFileToTable(file);
     }
 }
